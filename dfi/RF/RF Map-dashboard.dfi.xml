@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25">
+<Document name="RF-RF Map.dashboard.DFI">
+<dashboard xmlns="http://www.intersystems.com/deepsee/library" name="RF Map" folderName="RF" title="RF Map" description="" keywords="" owner="" shared="true" public="true" locked="false" resource="" timeCreated="2015-12-15T16:32:35.924Z" createdBy="web" category="" bookCover="" scheme="" worklistCount="0" snapTo="true" snapGrid="true" gridRows="10" gridCols="10" canResize="true" canModify="true" showTitleBar="true" companyName="" companyLogo="" companyStyle="">
+  <widget name="Виджет1" type="pivot" subtype="pivot" subtypeClass="lineChart" title="" dataSource="RF/Population.pivot" dataLink="" drillDownDataSource="" width="200" height="200" sidebarContent="" showSidebar="false" sidebarWidth="" maximized="false" homeRowL="0" homeColL="6" colSpanL="4" rowSpanL="4" showToolbar="true" theme="" dataColorList="">
+  </widget>
+  <widget name="Виджет2" type="portlet" subtype="DeepSee.EnhancedMapPortlet" subtypeClass="" title="" dataSource="RF/Population.pivot" dataLink="" drillDownDataSource="" width="200" height="200" sidebarContent="" showSidebar="false" sidebarWidth="" maximized="false" homeRowL="0" homeColL="0" colSpanL="6" rowSpanL="7" showToolbar="true" theme="" dataColorList="">
+    <property name="colorProperty">PopColor</property>
+    <property name="coordsJsFile">rfpolygons.js</property>
+    <property name="coordsProperty">Key</property>
+    <property name="zoom">3</property>
+  </widget>
+  <widget name="Виджет3" type="pivot" subtype="columnChart" subtypeClass="barChart" title="" dataSource="" dataLink="Виджет2" drillDownDataSource="" width="200" height="200" sidebarContent="" showSidebar="false" sidebarWidth="" maximized="false" homeRowL="4" homeColL="6" colSpanL="4" rowSpanL="4" showToolbar="true" theme="" dataColorList="">
+    <control name="" action="setColumnSpec" target="" targetProperty="[HLevel].[H1].[Part].CurrentMember.Properties(&quot;Population&quot;)" location="widget" type="hidden" controlClass="" label="Колонки" title="" value="[HLevel].[H1].[Part].CurrentMember.Properties(&quot;Population&quot;)" text="" readOnly="false" valueList="" displayList="" activeWhen=""></control>
+  </widget>
+</dashboard>
+</Document></Export>
