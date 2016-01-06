@@ -103,7 +103,7 @@ Cube definition from Architect.</Description>
 <FormalSpec>guid,level</FormalSpec>
 <Implementation><![CDATA[
 	s region=##class(RF.Region).%OpenId(..RegionforLevel(guid,level))
-	return region.Latitude
+	return region.Longitude
 ]]></Implementation>
 </Method>
 
@@ -112,7 +112,7 @@ Cube definition from Architect.</Description>
 <FormalSpec>guid,level</FormalSpec>
 <Implementation><![CDATA[
 	s region=##class(RF.Region).%OpenId(..RegionforLevel(guid,level))
-	return region.Longitude
+	return region.Latitude
 ]]></Implementation>
 </Method>
 

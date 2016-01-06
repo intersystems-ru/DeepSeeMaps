@@ -9,7 +9,7 @@
 	do ..ImportXData("RF.Region", "RegionXData")
 	do ..ImportXData("RF.Parameter", "ParameterXData")
 	do ..ImportXData("RF.ParameterValue", "ParameterValueXData")
-	if (1 = ##class(RF.Borders).Populate()) write !,"Инициализация завершена..."
+	//if (1 = ##class(RF.Borders).Populate()) write !,"Инициализация завершена..."
 ]]></Implementation>
 </Method>
 
