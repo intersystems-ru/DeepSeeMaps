@@ -8,6 +8,7 @@
     <property name="colorProperty">PopColor</property>
     <property name="coordsJsFile">rfpolygons.js</property>
     <property name="coordsProperty">Key</property>
+    <property name="markerTitleProperty">MarkerTitle</property>
     <property name="zoom">3</property>
   </widget>
   <widget name="Виджет3" type="pivot" subtype="columnChart" subtypeClass="barChart" title="" dataSource="" dataLink="Виджет2" drillDownDataSource="" width="200" height="200" sidebarContent="" showSidebar="false" sidebarWidth="" maximized="false" homeRowL="4" homeColL="6" colSpanL="4" rowSpanL="4" showToolbar="true" theme="" dataColorList="">

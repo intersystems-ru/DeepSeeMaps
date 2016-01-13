@@ -20,5 +20,9 @@
   </columnLevel>
   <columnLevel spec="[HLevel].[H1].[City].CurrentMember.Properties(&quot;Latitude&quot;)" key="" value="" text="Latitude" headEnabled="false" headCount="" filterEnabled="false" filterExpression="" orderEnabled="false" orderExpression="" orderDirection="BDESC" aggEnabled="false" aggFunction="" aggFunctionParm="" levelCaption="" levelFormat="" levelSummary="" levelType="" drillLevel="0" advanced="false" levelStyle="" levelHeaderStyle="" suppress8020="false" drilldownSpec="" enabled="true">
   </columnLevel>
+  <columnLevel spec="[HLevel].[H1].[Part].CurrentMember.Properties(&quot;MarkerTitle&quot;)" key="" value="" text="MarkerTitle" headEnabled="false" headCount="" filterEnabled="false" filterExpression="" orderEnabled="false" orderExpression="" orderDirection="BDESC" aggEnabled="false" aggFunction="" aggFunctionParm="" levelCaption="" levelFormat="" levelSummary="" levelType="" drillLevel="0" advanced="false" levelStyle="" levelHeaderStyle="" suppress8020="false" drilldownSpec="" enabled="true">
+  </columnLevel>
+  <columnLevel spec="[HLevel].[H1].[Part].CurrentMember.Properties(&quot;MarkerPopupContent&quot;)" key="" value="" text="MarkerPopupContent" headEnabled="false" headCount="" filterEnabled="false" filterExpression="" orderEnabled="false" orderExpression="" orderDirection="BDESC" aggEnabled="false" aggFunction="" aggFunctionParm="" levelCaption="" levelFormat="" levelSummary="" levelType="" drillLevel="0" advanced="false" levelStyle="" levelHeaderStyle="" suppress8020="false" drilldownSpec="" enabled="true">
+  </columnLevel>
 </pivot>
 </Document></Export>
