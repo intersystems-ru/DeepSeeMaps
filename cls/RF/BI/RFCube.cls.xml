@@ -27,6 +27,7 @@ Cube definition from Architect.</Description>
         <property sourceExpression="%cube.GetColor(0,7000000,%cube.ValueforLevel(%source.Guid,0,2))" name="AreaColor" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
         <property sourceExpression="%cube.GetLatitudeforLevel(%source.Guid,0)" name="Latitude" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
         <property sourceExpression="%cube.GetLongitudeforLevel(%source.Guid,0)" name="Longitude" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
+        <property sourceExpression="%cube.GetGUIDforLevel(%source.Guid,0)" name="Guid" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
       </level>
       <level sourceExpression="%cube.GetRegion(%source.Guid,1)" name="District" disabled="false" list="false" useDisplayValue="true" useAsFilter="true">
         <property sourceExpression="%cube.GetNameforLevel(%source.Guid,1)" name="Name" disabled="false" hidden="false" isName="true" isDescription="false" isReference="false" useDisplayValue="false"></property>
@@ -36,6 +37,8 @@ Cube definition from Architect.</Description>
         <property sourceExpression="%cube.GetColor(0,25000000,%cube.ValueforLevel(%source.Guid,1,2))" name="AreaColor" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
         <property sourceExpression="%cube.GetLatitudeforLevel(%source.Guid,1)" name="Latitude" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
         <property sourceExpression="%cube.GetLongitudeforLevel(%source.Guid,1)" name="Longitude" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
+     	<property sourceExpression="%cube.GetGUIDforLevel(%source.Guid,1)" name="Guid" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
+      
       </level>
       <level sourceExpression="%cube.GetRegion(%source.Guid,2)" name="Region" disabled="false" list="false" useDisplayValue="true" useAsFilter="true">
         <property sourceExpression="%cube.GetNameforLevel(%source.Guid,2)" name="Name" disabled="false" hidden="false" isName="true" isDescription="false" isReference="false" useDisplayValue="false"></property>
@@ -43,14 +46,17 @@ Cube definition from Architect.</Description>
         <property sourceExpression="%cube.ValueforLevel(%source.Guid,2,2)" name="Area" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
         <property sourceExpression="%cube.GetColor(0,16000000,%cube.ValueforLevel(%source.Guid,2,1))" name="PopColor" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
         <property sourceExpression="%cube.GetColor(0,1000000,%cube.ValueforLevel(%source.Guid,2,2))" name="AreaColor" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
-         <property sourceExpression="%cube.GetLatitudeforLevel(%source.Guid,2)" name="Latitude" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
+        <property sourceExpression="%cube.GetLatitudeforLevel(%source.Guid,2)" name="Latitude" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
         <property sourceExpression="%cube.GetLongitudeforLevel(%source.Guid,2)" name="Longitude" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
-
+     	<property sourceExpression="%cube.GetGUIDforLevel(%source.Guid,2)" name="Guid" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
+      	
       </level>
       <level sourceExpression="%cube.GetRegion(%source.Guid,3)" name="City" disabled="false" list="false" useDisplayValue="true" useAsFilter="true">
         <property sourceExpression="%cube.GetNameforLevel(%source.Guid,3)" name="Name" disabled="false" hidden="false" isName="true" isDescription="false" isReference="false" useDisplayValue="false"></property>
         <property sourceProperty="Latitude" name="Latitude" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
         <property sourceProperty="Longitude" name="Longitude" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
+        <property sourceExpression="%cube.GetGUIDforLevel(%source.Guid,2)" name="Guid" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
+      
       </level>
     </hierarchy>
   </dimension>
@@ -98,12 +104,21 @@ Cube definition from Architect.</Description>
 ]]></Implementation>
 </Method>
 
+<Method name="GetGUIDforLevel">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>guid,level</FormalSpec>
+<Implementation><![CDATA[
+	s region=##class(RF.Region).%OpenId(..RegionforLevel(guid,level))
+	return region.Guid
+]]></Implementation>
+</Method>
+
 <Method name="GetLatitudeforLevel">
 <ClassMethod>1</ClassMethod>
 <FormalSpec>guid,level</FormalSpec>
 <Implementation><![CDATA[
 	s region=##class(RF.Region).%OpenId(..RegionforLevel(guid,level))
-	return region.Longitude
+	return region.Latitude
 ]]></Implementation>
 </Method>
 
@@ -112,7 +127,7 @@ Cube definition from Architect.</Description>
 <FormalSpec>guid,level</FormalSpec>
 <Implementation><![CDATA[
 	s region=##class(RF.Region).%OpenId(..RegionforLevel(guid,level))
-	return region.Latitude
+	return region.Longitude
 ]]></Implementation>
 </Method>
 
