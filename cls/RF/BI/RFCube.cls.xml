@@ -28,6 +28,8 @@ Cube definition from Architect.</Description>
         <property sourceExpression="%cube.GetLatitudeforLevel(%source.Guid,0)" name="Latitude" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
         <property sourceExpression="%cube.GetLongitudeforLevel(%source.Guid,0)" name="Longitude" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
         <property sourceExpression="%cube.GetGUIDforLevel(%source.Guid,0)" name="Guid" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
+        <property sourceExpression="&quot;Marker hint=&quot;_%cube.GetNameforLevel(%source.Guid,0)" name="MarkerTitle" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
+        <property sourceExpression="&quot;&lt;b&gt; Marker Popup Content &lt;/b&gt; &lt;p&gt;&quot;_%cube.GetNameforLevel(%source.Guid,0)" name="MarkerPopupContent" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
       </level>
       <level sourceExpression="%cube.GetRegion(%source.Guid,1)" name="District" disabled="false" list="false" useDisplayValue="true" useAsFilter="true">
         <property sourceExpression="%cube.GetNameforLevel(%source.Guid,1)" name="Name" disabled="false" hidden="false" isName="true" isDescription="false" isReference="false" useDisplayValue="false"></property>
@@ -37,8 +39,10 @@ Cube definition from Architect.</Description>
         <property sourceExpression="%cube.GetColor(0,25000000,%cube.ValueforLevel(%source.Guid,1,2))" name="AreaColor" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
         <property sourceExpression="%cube.GetLatitudeforLevel(%source.Guid,1)" name="Latitude" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
         <property sourceExpression="%cube.GetLongitudeforLevel(%source.Guid,1)" name="Longitude" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
-     	<property sourceExpression="%cube.GetGUIDforLevel(%source.Guid,1)" name="Guid" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
-      
+        <property sourceExpression="%cube.GetGUIDforLevel(%source.Guid,1)" name="Guid" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
+        <property sourceExpression="&quot;Marker hint=&quot;_%cube.GetNameforLevel(%source.Guid,1)" name="MarkerTitle" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
+             <property sourceExpression="&quot;&lt;b&gt; Marker Popup Content &lt;/b&gt; &lt;p&gt;&quot;_%cube.GetNameforLevel(%source.Guid,1)" name="MarkerPopupContent" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
+
       </level>
       <level sourceExpression="%cube.GetRegion(%source.Guid,2)" name="Region" disabled="false" list="false" useDisplayValue="true" useAsFilter="true">
         <property sourceExpression="%cube.GetNameforLevel(%source.Guid,2)" name="Name" disabled="false" hidden="false" isName="true" isDescription="false" isReference="false" useDisplayValue="false"></property>
@@ -48,15 +52,19 @@ Cube definition from Architect.</Description>
         <property sourceExpression="%cube.GetColor(0,1000000,%cube.ValueforLevel(%source.Guid,2,2))" name="AreaColor" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
         <property sourceExpression="%cube.GetLatitudeforLevel(%source.Guid,2)" name="Latitude" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
         <property sourceExpression="%cube.GetLongitudeforLevel(%source.Guid,2)" name="Longitude" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
-     	<property sourceExpression="%cube.GetGUIDforLevel(%source.Guid,2)" name="Guid" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
-      	
+        <property sourceExpression="%cube.GetGUIDforLevel(%source.Guid,2)" name="Guid" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
+        <property sourceExpression="&quot;Marker hint=&quot;_%cube.GetNameforLevel(%source.Guid,2)" name="MarkerTitle" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
+            <property sourceExpression="&quot;&lt;b&gt; Marker Popup Content &lt;/b&gt; &lt;p&gt;&quot;_%cube.GetNameforLevel(%source.Guid,2)" name="MarkerPopupContent" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
+
       </level>
       <level sourceExpression="%cube.GetRegion(%source.Guid,3)" name="City" disabled="false" list="false" useDisplayValue="true" useAsFilter="true">
         <property sourceExpression="%cube.GetNameforLevel(%source.Guid,3)" name="Name" disabled="false" hidden="false" isName="true" isDescription="false" isReference="false" useDisplayValue="false"></property>
         <property sourceProperty="Latitude" name="Latitude" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
         <property sourceProperty="Longitude" name="Longitude" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
         <property sourceExpression="%cube.GetGUIDforLevel(%source.Guid,2)" name="Guid" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
-      
+        <property sourceExpression="&quot;Marker hint=&quot;_%cube.GetNameforLevel(%source.Guid,3)" name="MarkerTitle" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
+          <property sourceExpression="&quot;&lt;b&gt; Marker Popup Content &lt;/b&gt; &lt;p&gt;&quot;_%cube.GetNameforLevel(%source.Guid,3)" name="MarkerPopupContent" disabled="false" hidden="false" isName="false" isDescription="false" isReference="false" useDisplayValue="false"></property>
+
       </level>
     </hierarchy>
   </dimension>

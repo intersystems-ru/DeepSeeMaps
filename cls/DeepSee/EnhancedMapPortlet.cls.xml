@@ -223,15 +223,9 @@ Use markers coordinates to render a heatmap</Description>
 <InitialExpression>0</InitialExpression>
 </Property>
 
-<Property name="drillFilterProperty">
+<Property name="markerPopupContentProperty">
 <Description>
-DrillFilterProperty</Description>
-<Type>%ZEN.Datatype.string</Type>
-</Property>
-
-<Property name="drillDrillProperty">
-<Description>
-DrillDrillProperty</Description>
+Name of Column for Popup content for Popup on marker click</Description>
 <Type>%ZEN.Datatype.string</Type>
 </Property>
 
@@ -303,8 +297,7 @@ DrillDrillProperty</Description>
 	set pInfo($I(pInfo)) = $LB("onaddpolygon","","%ZEN.Datatype.eventHandler","'onaddpolygon' event handler","User callback for onaddpolygon event")
 	set pInfo($I(pInfo)) = $LB("onaddmarker","","%ZEN.Datatype.eventHandler","'onaddmarker' event handler","User callback for onaddmarker event")
 	set pInfo($I(pInfo)) = $LB("markersAsHeatmap",0,"%Boolean","Heatmap mode","Toggle heatmap mode for rendering markers.")
-	set pInfo($I(pInfo)) = $LB("drillFilterProperty","","%ZEN.Datatype.string","Drill Filter Target widgets","Comma-separated list of widgets to filter with widget's current level")
-	set pInfo($I(pInfo)) = $LB("drillDrillProperty","","%ZEN.Datatype.string","Drill Drill Target widgets","Comma-separated list of widgets to perform drilldown with widget's current level")
+	set pInfo($I(pInfo)) = $LB("markerPopupContentProperty","","%ZEN.Datatype.string","Marker Popup Content"," Name of Column for Popup content for Popup on marker click")
 
 	quit $$$OK
 ]]></Implementation>
