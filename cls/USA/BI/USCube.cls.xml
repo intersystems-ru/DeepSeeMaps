@@ -78,5 +78,18 @@ Cube definition from Architect.</Description>
 	return ""
 ]]></Implementation>
 </Method>
+
+<Method name="TermListSetup">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[
+ s ^DeepSee.TermList("USMAPSOURCES","caption")	=	"Map Sources"
+ s ^DeepSee.TermList("USMAPSOURCES","data","Area","VALUE")	=	"US Map Area.pivot"
+ s ^DeepSee.TermList("USMAPSOURCES","data","Density","VALUE")	= "US Map Density.pivot"
+ s ^DeepSee.TermList("USMAPSOURCES","data","Population","VALUE")	=	"US Map Population.pivot"
+ s ^DeepSee.TermList("USMAPSOURCES","modDate")	=	"2016-03-11 01:36:04"
+ s ^DeepSee.TermList("USMAPSOURCES","name")	=	"USMapSources"
+ quit
+]]></Implementation>
+</Method>
 </Class>
 </Export>

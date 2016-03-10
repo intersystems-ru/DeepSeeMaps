@@ -5,6 +5,7 @@
   <widget name="Виджет1" type="pivot" subtype="pivot" subtypeClass="lineChart" title="" dataSource="RF/Population.pivot" dataLink="" drillDownDataSource="" width="200" height="200" sidebarContent="" showSidebar="false" sidebarWidth="" maximized="false" homeRowL="0" homeColL="6" colSpanL="4" rowSpanL="4" showToolbar="true" theme="" dataColorList="">
   </widget>
   <widget name="Виджет2" type="portlet" subtype="DeepSee.EnhancedMapPortlet" subtypeClass="" title="" dataSource="RF/Population.pivot" dataLink="" drillDownDataSource="" width="200" height="200" sidebarContent="" showSidebar="false" sidebarWidth="" maximized="false" homeRowL="0" homeColL="0" colSpanL="6" rowSpanL="7" showToolbar="true" theme="" dataColorList="">
+    <control name="" action="applyFilter" target="W4" targetProperty="[HLevel].[H1].[Part]" location="click" type="auto" controlClass="" label="" title="" value="" text="" readOnly="false" valueList="" displayList="" activeWhen=""></control>
     <property name="colorProperty">PopColor</property>
     <property name="coordsJsFile">rfpolygons.js</property>
     <property name="coordsProperty">Key</property>
@@ -13,6 +14,8 @@
   </widget>
   <widget name="Виджет3" type="pivot" subtype="columnChart" subtypeClass="barChart" title="" dataSource="" dataLink="Виджет2" drillDownDataSource="" width="200" height="200" sidebarContent="" showSidebar="false" sidebarWidth="" maximized="false" homeRowL="4" homeColL="6" colSpanL="4" rowSpanL="4" showToolbar="true" theme="" dataColorList="">
     <control name="" action="setColumnSpec" target="" targetProperty="[HLevel].[H1].[Part].CurrentMember.Properties(&quot;Population&quot;)" location="widget" type="hidden" controlClass="" label="Колонки" title="" value="[HLevel].[H1].[Part].CurrentMember.Properties(&quot;Population&quot;)" text="" readOnly="false" valueList="" displayList="" activeWhen=""></control>
+  </widget>
+  <widget name="W4" type="pivot" subtype="pivot" subtypeClass="lineChart" title="" dataSource="RF/Population.pivot" dataLink="" drillDownDataSource="" width="200" height="200" sidebarContent="" showSidebar="false" sidebarWidth="" maximized="false" homeRowL="5" homeColL="6" colSpanL="4" rowSpanL="4" showToolbar="true" theme="" dataColorList="">
   </widget>
 </dashboard>
 </Document></Export>
