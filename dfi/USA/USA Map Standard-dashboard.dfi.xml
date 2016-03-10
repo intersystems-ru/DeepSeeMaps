@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25">
+<Document name="USA-USA Map Standard.dashboard.DFI">
+<dashboard xmlns="http://www.intersystems.com/deepsee/library" name="USA Map Standard" folderName="USA" title="USA Map Standard " description="" keywords="" owner="" shared="true" public="true" locked="false" resource="" timeCreated="2016-03-10T21:05:26.615Z" createdBy="UnknownUser" category="" bookCover="" scheme="" worklistCount="2" snapTo="true" snapGrid="true" gridRows="10" gridCols="10" canResize="true" canModify="true" showTitleBar="true" companyName="" companyLogo="" companyStyle="">
+  <widget name="uspolygons" type="map" subtype="map" subtypeClass="" title="" dataSource="USA/US Map.pivot" dataLink="" drillDownDataSource="" width="200" height="200" sidebarContent="" showSidebar="false" sidebarWidth="" maximized="false" homeRowL="0" homeColL="0" colSpanL="7" rowSpanL="7" showToolbar="true" theme="" dataColorList="">
+    <property name="zoom">6</property>
+  </widget>
+  <widget name="Widget2" type="pivot" subtype="pivot" subtypeClass="lineChart" title="" dataSource="" dataLink="uspolygons" drillDownDataSource="" width="200" height="200" sidebarContent="" showSidebar="false" sidebarWidth="" maximized="false" homeRowL="0" homeColL="7" colSpanL="4" rowSpanL="4" showToolbar="true" theme="" dataColorList="">
+  </widget>
+</dashboard>
+</Document></Export>
