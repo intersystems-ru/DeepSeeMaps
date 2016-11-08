@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25">
+<Class name="FIN.Parameter">
+<Super>%Persistent,%XML.Adaptor</Super>
+<TimeCreated>64229,34091.575321</TimeCreated>
+
+<Property name="Name">
+<Type>%String</Type>
+</Property>
+
+<Property name="UnitName">
+<Type>%String</Type>
+</Property>
+
+<Property name="Values">
+<Type>FIN.ParameterValue</Type>
+<Cardinality>many</Cardinality>
+<Inverse>Parameter</Inverse>
+<Relationship>1</Relationship>
+</Property>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^FIN.ParameterD</DataLocation>
+<DefaultData>ParameterDefaultData</DefaultData>
+<IdLocation>^FIN.ParameterD</IdLocation>
+<IndexLocation>^FIN.ParameterI</IndexLocation>
+<StreamLocation>^FIN.ParameterS</StreamLocation>
+<Data name="ParameterDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>Name</Value>
+</Value>
+<Value name="3">
+<Value>UnitName</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+</Export>

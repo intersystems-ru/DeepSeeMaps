@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25">
+<Class name="FIN.ParameterValue">
+<Super>%Persistent,%XML.Adaptor</Super>
+<TimeCreated>64229,34489.404874</TimeCreated>
+
+<Property name="Region">
+<Type>Area</Type>
+<Cardinality>one</Cardinality>
+<Inverse>Parameters</Inverse>
+<Relationship>1</Relationship>
+<Parameter name="XMLPROJECTION" value="XELEMENT"/>
+<Parameter name="XMLREFERENCE" value="ID"/>
+</Property>
+
+<Property name="Parameter">
+<Description>
+State, county or city
+Parameter</Description>
+<Type>Parameter</Type>
+<Cardinality>one</Cardinality>
+<Inverse>Values</Inverse>
+<Relationship>1</Relationship>
+<Parameter name="XMLPROJECTION" value="XELEMENT"/>
+<Parameter name="XMLREFERENCE" value="ID"/>
+</Property>
+
+<Property name="Value">
+<Description>
+Value for region|county|city</Description>
+<Type>%Float</Type>
+<Required>1</Required>
+</Property>
+
+<Index name="PVIdx">
+<Properties>Region,Parameter</Properties>
+</Index>
+
+<Index name="RegionParameterIndex">
+<Properties>Region,Parameter</Properties>
+<Unique>1</Unique>
+</Index>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^FIN.ParameterValueD</DataLocation>
+<DefaultData>ParameterValueDefaultData</DefaultData>
+<IdLocation>^FIN.ParameterValueD</IdLocation>
+<IndexLocation>^FIN.ParameterValueI</IndexLocation>
+<StreamLocation>^FIN.ParameterValueS</StreamLocation>
+<Data name="ParameterValueDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>Value</Value>
+</Value>
+<Value name="3">
+<Value>Parameter</Value>
+</Value>
+<Value name="4">
+<Value>Region</Value>
+</Value>
+<Value name="5">
+<Value>Area</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+</Export>

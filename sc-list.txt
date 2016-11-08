@@ -1,4 +1,15 @@
+<cspapp>/finpolygons.js
+<cspapp>/rfpolygons.js
+<cspapp>/uspolygons.js
 DeepSee.EnhancedMapPortlet.cls
+FIN-FIN Map Population.pivot.dfi
+FIN-FINMap.dashboard.dfi
+FIN.Area.cls
+FIN.BI.FINCube.cls
+FIN.Parameter.cls
+FIN.ParameterValue.cls
+FIN.Region.cls
+FIN.Utils.cls
 RF-Population.pivot.dfi
 RF-Population_StandardMap.pivot.dfi
 RF-RF Map.dashboard.dfi
