@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25">
+<Class name="Tramp.Elections2">
+<Super>%Persistent,%XML.Adaptor</Super>
+<TimeCreated>64251,54430.639019</TimeCreated>
+
+<Property name="StateName">
+<Type>%String</Type>
+</Property>
+
+<Property name="RegionName">
+<Type>%String</Type>
+</Property>
+
+<Property name="CityName">
+<Type>%String</Type>
+</Property>
+
+<Property name="CountyName">
+<Type>%String</Type>
+</Property>
+
+<Property name="Trump">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="Clinton">
+<Type>%Integer</Type>
+</Property>
+
+<Method name="Build">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[
+	d $classmethod("Tramp.Resultat","%KillExtent")
+	d ..buildResultState()
+	d ..buildResultCounties()
+]]></Implementation>
+</Method>
+
+<Method name="buildResultState">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[
+	&sql(Declare SQLCursor Cursor For
+		Select StateInfo.StateName, StateInfo.Trump, StateInfo.Clinton, StateID.GUID
+		Into :Name, :Trump, :Clinton, :GUID
+		From (Select StateName, Sum(Trump) As Trump, Sum(Clinton) As Clinton
+				From Tramp.Elections2
+				Group By StateName) As StateInfo 
+		Left Join (Select Name, GUID
+					From USA.Region
+					Where ParentRegion is Null) As StateID
+		On StateInfo.StateName = StateID.Name
+		Order By StateName
+		)
+		
+	&sql(Open SQLCursor)
+	&sql(Fetch SQLCursor)
+	While (SQLCODE=0) {
+		&sql(Insert Into Tramp.Resultat(RegionName, Guid, Trump, Clinton) values(:Name,:GUID,:Trump,:Clinton))
+		&sql(Fetch SQLCursor)
+	}
+	&sql(Close SQLCursor)
+]]></Implementation>
+</Method>
+
+<Method name="buildResultCounties">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[
+	&sql(Declare SQLCursor1 Cursor For
+		Select CountyInfo.CountyName, CountyInfo.Trump, CountyInfo.Clinton, CountyID.GUID
+		Into :Name, :Trump, :Clinton, :GUID
+		From (Select CountyName, te.Trump As Trump, te.Clinton As Clinton, GUID As ParentGUID
+				From Tramp.Elections2 As te
+				Left Join Tramp.Resultat As tr
+				On StateName = tr.RegionName
+				Where CountyName Is Not Null) As CountyInfo,
+			 (Select  GUID, ParentRegion As ParentGUID, Name
+			 	From USA.Region
+			 	Where ParentRegion Is Not Null) As CountyID
+		Where (CountyInfo.CountyName = CountyID.Name) And (CountyInfo.ParentGUID = CountyID.ParentGUID)
+		)
+		
+	&sql(Open SQLCursor1)
+	&sql(Fetch SQLCursor1)
+	While (SQLCODE=0) {
+		&sql(Insert Into Tramp.Resultat(RegionName, Guid, Trump, Clinton) values(:Name,:GUID,:Trump,:Clinton))
+		&sql(Fetch SQLCursor1)
+	}
+	&sql(Close SQLCursor1)
+]]></Implementation>
+</Method>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^Tramp.Elections2D</DataLocation>
+<DefaultData>Elections2DefaultData</DefaultData>
+<IdLocation>^Tramp.Elections2D</IdLocation>
+<IndexLocation>^Tramp.Elections2I</IndexLocation>
+<StreamLocation>^Tramp.Elections2S</StreamLocation>
+<Data name="Elections2DefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>StateName</Value>
+</Value>
+<Value name="3">
+<Value>RegionName</Value>
+</Value>
+<Value name="4">
+<Value>Trump</Value>
+</Value>
+<Value name="5">
+<Value>Clinton</Value>
+</Value>
+<Value name="6">
+<Value>CityName</Value>
+</Value>
+<Value name="7">
+<Value>CountyName</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+</Export>
