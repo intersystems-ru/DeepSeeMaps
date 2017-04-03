@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25">
+<Class name="Trump.Result">
+<Super>%Persistent,%XML.Adaptor</Super>
+<TimeCreated>64376,48839.177808</TimeCreated>
+
+<Property name="RegionName">
+<Type>%String</Type>
+</Property>
+
+<Property name="Guid">
+<Type>%String</Type>
+</Property>
+
+<Property name="Trump">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="Clinton">
+<Type>%Integer</Type>
+</Property>
+
+<Index name="GIndex">
+<IdKey>1</IdKey>
+<Properties>Guid</Properties>
+<Unique>1</Unique>
+</Index>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^Trump.ResultD</DataLocation>
+<DefaultData>ResultDefaultData</DefaultData>
+<IdLocation>^Trump.ResultD</IdLocation>
+<IndexLocation>^Trump.ResultI</IndexLocation>
+<StreamLocation>^Trump.ResultS</StreamLocation>
+<Data name="ResultDefaultData">
+<Structure>listnode</Structure>
+<Subscript/>
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>RegionName</Value>
+</Value>
+<Value name="3">
+<Value>Trump</Value>
+</Value>
+<Value name="4">
+<Value>Clinton</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+</Export>

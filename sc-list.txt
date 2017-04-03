@@ -22,6 +22,8 @@ RF.Region.cls
 RF.Utils.cls
 Tramp.Elections2.cls
 Tramp.Resultat.cls
+Trump.Elections.cls
+Trump.Result.cls
 USA-Indicator.pivot.dfi
 USA-US Map.pivot.dfi
 USA-US Map Area.pivot.dfi
